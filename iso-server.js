@@ -19,9 +19,9 @@ const config = {
   }
   config.osrmPaths = ['data/lts1/data.osrm', 'data/lts2/data.osrm', 'data/lts3/data.osrm', 'data/lts4/data.osrm']
 
-
+let path
 try {
-    for(let path of config.osrmPaths){
+    for(path of config.osrmPaths){
       fs.accessSync(path, fs.F_OK);
     }
 } catch (error) {
