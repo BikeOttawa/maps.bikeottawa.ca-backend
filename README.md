@@ -17,7 +17,7 @@ Your Nginx config could look like this:
 server {
         listen 80 default_server;
         listen [::]:80 default_server ipv6only=on;
-        root /home/ubuntu/maps.bikeottawa.ca-backend;
+        root /var/www/html
         # catch all v1 routes and send them to OSRM
         location /route/v1/lts1   { proxy_pass http://localhost:5001; }
         location /route/v1/lts2   { proxy_pass http://localhost:5002; }
