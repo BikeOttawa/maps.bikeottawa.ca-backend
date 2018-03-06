@@ -5,6 +5,7 @@ Server side for maps.bikeottawa.ca running OSRM and isochrone servers. Tested wi
 Clone and install dependencies: 
 ```
 git clone https://github.com/zzptichka/maps.bikeottawa.ca-backend
+cd maps.bikeottawa.ca-backend/
 npm install
 ```
 
