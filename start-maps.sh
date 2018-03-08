@@ -14,4 +14,4 @@ $OSRM -p 5002 data/lts2/data.osrm &
 $OSRM -p 5003 data/lts3/data.osrm &
 $OSRM -p 5004 data/lts4/data.osrm &
 
-node iso-server.js
+node iso-server.js & 
