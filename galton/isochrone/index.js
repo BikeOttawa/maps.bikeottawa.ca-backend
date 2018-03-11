@@ -5,6 +5,7 @@ const destination = require('@turf/destination');
 const helpers = require('@turf/helpers');
 const pointGrid = require('@turf/point-grid');
 const rewind = require('geojson-rewind');
+const turf = require('@turf/turf')
 
 const makeGrid = (startPoint, options) => {
   const point = helpers.point(startPoint);
@@ -45,7 +46,9 @@ const makePolygons = (pointsByInterval, options) =>
   Object.keys(pointsByInterval).reduce((acc, interval) => {
     const points = pointsByInterval[interval];
     if (points.length >= 3) {
-      acc.push(makePolygon(points, interval, options));
+      const poly = makePolygon(points, interval, options);
+      //poly.properties.area = turf.area(poly)
+      acc.push(poly);
     }
     return acc;
   }, []);
