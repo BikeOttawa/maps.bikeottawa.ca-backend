@@ -13,12 +13,13 @@
   "dependencies": {
     "isochrone": "^2.0.2",
     "osrm": "5.15.1",
-    "minimist": "^1.2.0"
+    "minimist": "^1.2.0",
+    "log4js": "^2.5.3"
   },
   "repositories": [
     {
       "type": "git",
-      "url": "git://github.com/zzptichka/maps.bikeottawa.ca-backend.git"
+      "url": "git://github.com/BikeOttawa/maps.bikeottawa.ca-backend.git"
     }
   ]
 }

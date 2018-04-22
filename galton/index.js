@@ -1,7 +1,15 @@
-const url = require('url');
+  const url = require('url');
 const OSRM = require('osrm');
 const isochrone = require('./isochrone');
 const parseQuery = require('./utils');
+const log4js = require('log4js');
+
+log4js.configure({
+  appenders: { isochrones: { type: 'file', filename: '../maps.log' } },
+  categories: { default: { appenders: ['isochrones'], level: 'info' } }
+});
+
+const logger = log4js.getLogger('isochrones');
 
 /**
  * Isochrone server
@@ -20,6 +28,7 @@ const galton = (config) => {
   }
 
   return (req, res) => {
+    logger.info("Request: "+req.url)
     const { query } = url.parse(req.url, true);
     const osrm = osrmServers[query.dir]
     const options = Object.assign({}, parseQuery(query),{osrm});
