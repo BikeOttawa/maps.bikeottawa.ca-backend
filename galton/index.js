@@ -5,7 +5,7 @@ const parseQuery = require('./utils');
 const log4js = require('log4js');
 
 log4js.configure({
-  appenders: { isochrones: { type: 'file', filename: '../maps.log' } },
+  appenders: { isochrones: { type: 'file', filename: 'maps.log' } },
   categories: { default: { appenders: ['isochrones'], level: 'info' } }
 });
 
@@ -28,7 +28,7 @@ const galton = (config) => {
   }
 
   return (req, res) => {
-    logger.info("Request: "+req.url)
+    logger.info("Request: "+req.protocol + '://' + req.get('host') + req.originalUrl)
     const { query } = url.parse(req.url, true);
     const osrm = osrmServers[query.dir]
     const options = Object.assign({}, parseQuery(query),{osrm});
