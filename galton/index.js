@@ -28,7 +28,7 @@ const galton = (config) => {
   }
 
   return (req, res) => {
-    logger.info("Request: "+req.protocol + '://' + req.get('host') + req.originalUrl)
+    logger.info("Request: "+'https://maps.bikeottawa.ca:4000/'+req.url)
     const { query } = url.parse(req.url, true);
     const osrm = osrmServers[query.dir]
     const options = Object.assign({}, parseQuery(query),{osrm});
