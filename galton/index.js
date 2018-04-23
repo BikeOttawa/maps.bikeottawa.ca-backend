@@ -18,6 +18,7 @@ const logger = log4js.getLogger('isochrones');
  * @param {serverConfig} config default isochrone options
  */
 const galton = (config) => {
+  logger.info("Starting Galton server ...")
   let osrmServers = {}
   for(let path of config.osrmPaths){
     const dir = path.split('/')[1]
