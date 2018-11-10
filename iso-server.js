@@ -17,7 +17,7 @@ const config = {
     sharedMemory: false,
     units: defaults.units
   }
-  config.osrmPaths = ['data/lts1/data.osrm', 'data/lts2/data.osrm', 'data/lts3/data.osrm', 'data/lts4/data.osrm']
+  config.osrmPaths = ['data/lts1/data.osrm', 'data/lts2/data.osrm', 'data/lts3/data.osrm', 'data/lts4/data.osrm', 'data/foot/data.osrm']
 
 let path
 try {
