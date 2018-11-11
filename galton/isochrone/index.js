@@ -39,7 +39,9 @@ const groupByInterval = (destinations, intervals, travelTime) => {
 
 const makePolygon = (points, interval, options) => {
   const concave = concaveman(points, options.concavity, options.lengthThreshold);
-  return helpers.polygon([concave], { time: parseFloat(interval) });
+  const polygon = helpers.polygon([concave], { time: parseFloat(interval) });
+  polygon.properties.area = turf.area(polygon);
+  return polygon;
 };
 
 const makePolygons = (pointsByInterval, options) =>
