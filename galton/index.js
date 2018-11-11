@@ -44,7 +44,7 @@ const galton = (config) => {
         .then(geojson => res.end(JSON.stringify(geojson)))
         .catch((error) => {
           res.statusCode = 500;
-          res.end(JSON.stringify({ error }));
+          res.end(JSON.stringify({ error: "Can't fetch isochrone for this location"}));
         });
     }
   };
