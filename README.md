@@ -1,4 +1,8 @@
 # maps.bikeottawa.ca-backend
+
+> [!NOTE]
+> **Archived.** Superseded by [bikeottawa-maps](https://github.com/BikeOttawa/bikeottawa-maps), the new Bike Ottawa Maps. Routing and isochrones now run on BRouter, built and deployed from that repository.
+
 Server side for maps.bikeottawa.ca running OSRM and isochrone servers. Tested with Node v6
 
 ## Installation
